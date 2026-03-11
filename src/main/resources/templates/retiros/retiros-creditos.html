@@ -9,57 +9,66 @@
   </head>
 
   <body>
-  <header class="bg-light shadow-sm mb-4">
-    <div class="container py-3">
-      <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center">
-        <h1 class="h3 m-0">Retiros</h1>
-        <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
-          <div class="container">
-            <a class="navbar-brand fw-semibold" th:href="@{/recursos}">Retiros</a>
-            <div class="d-flex gap-2">
-              <a class="btn-primary-2" th:href="@{/recursos/new}">+ Nuevo retiro</a>
-              <a class="btn btn-outline-secondary" th:href="@{/retiros/impresion}">Versión para imprimir</a>
-              <a class="btn btn-outline-secondary" th:href="@{/retiros/creditos}">Créditos</a>
-              <a class="btn btn-outline-secondary" th:href="@{/retiros}">Volver</a>
+    <header class="bg-light shadow-sm mb-4">
+      <div class="container py-3">
+        <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center">
+          <h1 class="h3 m-0">Retiros</h1>
+          <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+            <div class="container">
+              <a class="navbar-brand fw-semibold" th:href="@{/recursos}">Retiros</a>
+              <div class="d-flex gap-2">
+                <a class="btn-primary-2" th:href="@{/recursos/new}">+ Nuevo retiro</a>
+                <a class="btn btn-outline-secondary" th:href="@{/retiros/impresion}">Versión para imprimir</a>
+                <a class="btn btn-outline-secondary" th:href="@{/retiros/creditos}">Créditos</a>
+                <a class="btn btn-outline-secondary" th:href="@{/retiros}">Volver</a>
+              </div>
             </div>
-
-          </div>
-       </nav>
+          </nav>
         </div>
-    </div>
+      </div>
     </header>
-    <!--creditos y fotos del equipo-->
+
+    <!-- Créditos y fotos del equipo -->
     <main class="container">
       <div class="card shadow-sm mb-4">
         <div class="card-body">
           <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
             <div class="fw-semibold">Créditos</div>
-            </div>
-            <div class="table-responsive">
-                <table class="table align-middle">
-                    <thead>
-                    <tr>
-                        <th style="width: 90px">ID</th>
-                        <th>Nombre</th>
-                        <th style="width: 160px">Rol</th>
-                        <th style="width: 160px">Foto</th>                
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:if="${#lists.isEmpty(resources)}">
-                        <td colspan="8" class="text-muted">Aún no hay reservaciones. Crea la primera.</td>
-                    </tr>
-                    <tr th:each="recurso : ${resources}">
-                        <td th:text="${recurso.id}">1</td>
-                        <td th:text="${recurso.titulo}">Nombre del integrante</td>
-                        <td th:text="${recurso.subtitulo}">Rol en el proyecto</td>
-                        <td><img th:src="@{/images/foto1.jpg}" alt="Foto del integrante" width="100"></td>                        
-                    </tr>
-                    </tbody>
-                </table>
-                </div>
-            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th style="width: 90px">ID</th>
+                  <th>Nombre</th>
+                  <th style="width: 160px">Rol</th>
+                  <th style="width: 160px">Foto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Evelyn García</td>
+                  <td>Analista de software</td>
+                  <td><img src="https://i.ibb.co/DHYbKm3m/Evelyn-Garc-a.jpg" alt="Foto de Evelyn García" width="100"></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Brian Paiz</td>
+                  <td>Programador / Desarrollador</td>
+                  <td><img src="https://i.ibb.co/yFQkGCSx/Brian-2.jpg" alt="Foto de Brian Paiz" width="100"></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Javier Quill</td>
+                  <td>Evaluador / Tester</td>
+                  <td><img src="https://i.ibb.co/KzVCdY3k/Javier-Quill.jpg" alt="Foto de Javier Quill" width="100"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
